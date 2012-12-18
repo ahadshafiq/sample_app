@@ -19,7 +19,8 @@ end
 gem 'jquery-rails'
 
 group :test, :development do
-  gem "rspec-rails", "~> 2.0"
+  gem 'rspec-rails', '~> 2.0'
+  gem 'annotate'
 
 end
 
