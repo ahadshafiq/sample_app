@@ -15,7 +15,7 @@ describe UsersController do
 
      	it "find the right user" do
        		get :show, :id => @user
-       		assigns(:user)should  == @user
+       		assigns(:user).should  == @user
      	end
 
      	it "have the right title" do
@@ -31,6 +31,12 @@ describe UsersController do
      	it "should have a profile image" do
      		get :show, :id => @user
      		response.should have_selector('h1>img', :class => "gravatar")
+     	end
+
+     	it "should have the right URL" do
+     		get :show, :id => @user
+     		response.should have_selector('td>a', :content => user_path(@user),
+     											  :href    => user_path(@user))
      	end
     end
 
